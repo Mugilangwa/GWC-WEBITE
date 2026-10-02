@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission & Vision - GWC Construction Company</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" type="text/css">
+  
+  <style>
+    /* Reset & Base Layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+     
+    body {
+      background-color: #0f172a;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("image 22.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px; /* Space for fixed header */
+    }
+
+    /* Fixed Top Navigation Bar */
+    header {
+      background-color: rgba(0, 86, 179, 0.95);
+      backdrop-filter: blur(8px);
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .logo {
+      height: 55px;
+      width: auto;
+    }
+
+    /* Hamburger Menu Toggle Button (Hidden on Desktop) */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #ffffff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: #f1f5f9;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      padding: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #ffffff;
+    }
+
+    nav a::before {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0%;
+      background-color: #38bdf8;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: width 250ms ease-in-out;
+    }
+
+    nav a:hover::before,
+    nav a.active::before {
+      width: 100%;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #f1f5f9;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-2px);
+    }
+
+    .social-icons a.facebook:hover { color: #1877F2; }
+    .social-icons a.instagram:hover { color: #E4405F; }
+    .social-icons a.linkedin:hover { color: #0A66C2; }
+    .social-icons a.whatsapp:hover { color: #25D366; }
+
+    /* Page Header */
+    .page-title {
+      text-align: center;
+      margin: 40px auto 10px auto;
+      color: #ffffff;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Main Content Section */
+    main {
+      max-width: 1100px;
+      margin: 20px auto 50px auto;
+      padding: 0 20px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 8px;
+    }
+
+    .card p {
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Core Values Section */
+    .values-section {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 35px 30px;
+      margin-top: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .values-section h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .value-item i {
+      font-size: 1.8rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .value-item h3 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .value-item p {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #003d80;
+      color: #ffffff;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 8px;
+    }
+
+    footer .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .footer-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0056b3;
+        border-top: 1px solid #003d80;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+      }
+
+      nav li {
+        text-align: center;
+      }
+
+      nav a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+      }
+
+      nav a::before {
+        display: none;
+      }
+
+      .social-icons {
+        margin-left: auto;
+        margin-right: 15px;
+      }
+
+      .page-title {
+        font-size: 1.8rem;
+      }
+
+      .values-section {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="index.html">
+        <img src="Untitled.png" alt="GWC Construction Logo" class="logo">
+      </a>
+      
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/255742585858" target="_blank" aria-label="WhatsApp" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <!-- Burger Menu Icon for Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="mission.html" class="active">Mission & Vision</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1 class="page-title">OUR MISSION & VISION</h1>
+
+  <main>
+    <!-- Mission & Vision Cards -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-bullseye"></i>
+        </div>
+        <h2>Our Mission</h2>
+        <p>
+          To empower critical regional industries—including construction, mining, trade, agriculture, and marine operations—by delivering robust, high-performance machinery, innovative GPS asset tracking, and efficient logistics solutions that drive sustainable economic growth.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+        <h2>Our Vision</h2>
+        <p>
+          To be the leading and most trusted partner across East Africa for industrial machinery rental, trade facilitation, and smart asset tracking, setting the standard for reliability, operational excellence, and customer success.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values Section -->
+    <div class="values-section">
+      <h2>Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Reliability</h3>
+          <p>Delivering dependable machinery and real-time data solutions without compromise.</p>
+        </div>
+        <div class="value-item">
+          <i class="fa-solid fa-handshake"></i>
+          <h3>Integrity</h3>
+          <p>Building long-term business partnerships founded on trust and transparency.</p>
+        </div>
+        <div class="value-item">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Innovation</h3>
+          <p>Integrating modern technologies to optimize logistics and asset management.</p>
+        </div>
+        <div class="value-item">
+          <i class="fa-solid fa-seedling"></i>
+          <h3>Sustainability</h3>
+          <p>Fostering responsible agricultural and regional economic development.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-footer">
+      <p>&copy; 2026 GWC Construction. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+        <span>|</span>
+        <a href="contact.html">Contact Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+
+</body>
+</html>
