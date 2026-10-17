@@ -1,5 +1,5 @@
 /* ============================================
-   GWC CONSTRUCTION - MAIN JAVASCRIPT
+   STEELGRID CONSTRUCTION - MAIN JAVASCRIPT
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // BADILISHA SENTENSI HAPA 👇
     // ============================================
     const sentences = [
-      'GWC CONSTRUCTION',
+      'STEELGRID CONSTRUCTION',
       'CONNECTING MARKETS',
       'DELIVERING VALUE'
     ];
